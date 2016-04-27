@@ -1,0 +1,33 @@
+{
+  "name": "cooking-vue",
+  "version": "0.0.1",
+  "description": "A cooking plugin to extend vue config.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cookingjs/cooking-vue.git"
+  },
+  "keywords": [
+    "cooking",
+    "vue",
+    "cooking-plugin"
+  ],
+  "author": "qingwei-li <qingwei.li@ele.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cookingjs/cooking-vue/issues"
+  },
+  "homepage": "https://github.com/cookingjs/cooking-vue#readme",
+  "dependencies": {
+    "vue": "^1.0.21",
+    "vue-hot-reload-api": "^1.3.2",
+    "vue-html-loader": "^1.2.2",
+    "vue-loader": "^8.2.3",
+    "vue-router": "^0.7.13",
+    "vue-style-loader": "^1.0.0",
+    "vuex": "^0.6.3"
+  }
+}
