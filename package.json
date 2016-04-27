@@ -1,6 +1,6 @@
 {
   "name": "cooking-vue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A cooking plugin to extend vue config.",
   "main": "index.js",
   "scripts": {
