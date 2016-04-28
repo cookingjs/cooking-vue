@@ -1,5 +1,9 @@
 var cssLoader = require('./css-loader')
 
+/**
+ * @param  {object} cooking - provide add, remove, config method
+ * @param  {object} [options]
+ */
 module.exports = function (cooking) {
   var SOURCE_MAP = cooking.config.sourceMap
 
@@ -13,7 +17,7 @@ module.exports = function (cooking) {
   cooking.config.resolve.extensions.push('.vue')
 
   // add vue config
-  if (process.env.NODE_ENV === 'PRODUCTION') {
+  if (process.env.NODE_ENV === 'production') {
     cooking.config.vue = {
       loaders: cssLoader({
         sourceMap: SOURCE_MAP ? '#source-map' : false,
