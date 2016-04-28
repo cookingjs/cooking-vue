@@ -10,7 +10,7 @@ module.exports = function (cooking) {
   // add loader
   cooking.add('loader.vue', {
     test: /\.vue$/,
-    loaders: ['vue']
+    loaders: ['vue-loader']
   })
 
   // add extension
@@ -21,7 +21,7 @@ module.exports = function (cooking) {
     cooking.config.vue = {
       loaders: cssLoader({
         sourceMap: SOURCE_MAP ? '#source-map' : false,
-        extract: true
+        extract: !!cooking.config.extractCSS
       })
     }
   } else {
