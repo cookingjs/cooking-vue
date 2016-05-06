@@ -13,6 +13,11 @@ module.exports = function (cooking) {
     loaders: ['vue-loader']
   })
 
+  cooking.add('loader.html', {
+    test: /\.html$/,
+    loaders: ['vue-html-loader']
+  })
+
   // add extension
   cooking.config.resolve.extensions.push('.vue')
 
