@@ -15,7 +15,7 @@ module.exports = function (cooking) {
 
   cooking.add('loader.html', {
     test: /\.html$/,
-    loaders: ['vue-html-loader']
+    loaders: ['vue-html-loader?minimize=false']
   })
 
   // add extension
