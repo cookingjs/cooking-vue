@@ -22,16 +22,10 @@ module.exports = function (cooking) {
   cooking.config.resolve.extensions.push('.vue')
 
   // add vue config
-  if (process.env.NODE_ENV === 'production') {
-    cooking.config.vue = {
-      loaders: cssLoader({
-        sourceMap: SOURCE_MAP ? '#source-map' : false,
-        extract: !!cooking.config.extractCSS
-      })
-    }
-  } else {
-    cooking.config.vue = {
-      loaders: cssLoader()
-    }
+  cooking.config.vue = {
+    loaders: cssLoader({
+      sourceMap: SOURCE_MAP ? '#source-map' : false,
+      extract: !!cooking.config.extractCSS
+    })
   }
 }
