@@ -6,6 +6,7 @@ var cssLoader = require('./css-loader')
  */
 module.exports = function (cooking) {
   var SOURCE_MAP = cooking.config.sourceMap
+  var preLoader = []
 
   // add loader
   cooking.add('loader.vue', {
@@ -21,11 +22,18 @@ module.exports = function (cooking) {
   // add extension
   cooking.config.resolve.extensions.push('.vue')
 
+  // styleLint preLoader
+  if (cooking.config.extends.stylelint ||
+      cooking.config.extends.includeOf('stylelint') > -1) {
+    preLoader.push('stylelint-loader')
+  }
+
   // add vue config
   cooking.config.vue = {
     loaders: cssLoader({
       sourceMap: SOURCE_MAP ? '#source-map' : false,
-      extract: !!cooking.config.extractCSS
+      extract: !!cooking.config.extractCSS,
+      preLoader: preLoader
     })
   }
 }
