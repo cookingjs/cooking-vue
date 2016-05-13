@@ -1,7 +1,7 @@
 var cssLoader = require('./css-loader')
 
 /**
- * @param  {object} cooking - provide add, remove, config method
+ * @param  {object} cooking - provide add, remove, config, _userConfig method
  * @param  {object} [options]
  */
 module.exports = function (cooking) {
@@ -23,8 +23,8 @@ module.exports = function (cooking) {
   cooking.config.resolve.extensions.push('.vue')
 
   // styleLint preLoader
-  if (cooking.config.extends.stylelint ||
-      cooking.config.extends.includeOf('stylelint') > -1) {
+  if (cooking._userConfig.extends.stylelint ||
+      cooking._userConfig.extends.indexOf('stylelint') > -1) {
     preLoader.push('stylelint-loader')
   }
 
