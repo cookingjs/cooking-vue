@@ -23,9 +23,11 @@ module.exports = function (cooking) {
   cooking.config.resolve.extensions.push('.vue')
 
   // styleLint preLoader
-  if (cooking._userConfig.extends.stylelint ||
+  if (cooking._userConfig) {
+    if (cooking._userConfig.extends.stylelint ||
       cooking._userConfig.extends.indexOf('stylelint') > -1) {
-    preLoader.push('stylelint-loader')
+      preLoader.push('stylelint-loader')
+    }
   }
 
   // add vue config
