@@ -4,8 +4,6 @@ module.exports = function (options) {
   options = options || {}
   // generate loader string to be used with extract text plugin
   function generateLoaders (loaders) {
-    loaders = loaders.concat(options.preLoader)
-
     var sourceLoader = loaders.map(function (loader) {
       var extraParamChar
       if (/\?/.test(loader)) {
