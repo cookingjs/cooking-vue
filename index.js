@@ -24,7 +24,7 @@ module.exports = function (cooking) {
 
   var plugins = cooking.config.postcss
 
-  if (plugins) {
+  if (Array.isArray(plugins)) {
     cooking.config.vue.postcss = function (webpack) {
       return plugins.map(plugin => isFunction(plugin) ? plugin(webpack) : plugin)
     }
