@@ -9,7 +9,7 @@ var isFunction = function (val) {
  * @param  {object} [options]
  */
 module.exports = function (cooking) {
-  var SOURCE_MAP = cooking.config.sourceMap
+  var SOURCE_MAP = cooking.config.devtool
 
   cooking.config.vue = cooking.config.vue || {}
 
