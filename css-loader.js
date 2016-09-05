@@ -1,5 +1,8 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var isNextWebpack = require('cooking/util/check').isNextWebpack
+var isNextWebpack = false
+try {
+  isNextWebpack = require('cooking/util/check').isNextWebpack
+} catch(_) {}
 
 module.exports = function (options) {
   options = options || {}
