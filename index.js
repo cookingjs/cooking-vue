@@ -28,6 +28,8 @@ module.exports = function (cooking) {
     cooking.config.vue.postcss = function (webpack) {
       return plugins.map(plugin => isFunction(plugin) ? plugin(webpack) : plugin)
     }
+  } else if (plugins) {
+    cooking.config.vue.postcss = plugins
   }
 
   // add vue config
