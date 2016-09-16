@@ -13,9 +13,6 @@ module.exports = function (cooking) {
 
   cooking.config.vue = cooking.config.vue || {}
 
-  // clear default babel config
-  cooking.config.vue.babel = cooking.config.vue.babel || 'babel-loader'
-
   // add loader
   cooking.add('loader.vue', {
     test: /\.vue$/,
@@ -36,8 +33,11 @@ module.exports = function (cooking) {
   }
 
   // add vue config
-  cooking.config.vue.loaders = cssLoader({
+  cooking.config.vue.loaders = Object.assign({},
+    { js: 'babel-loader' },
+    cooking.config.vue.loaders,
+    cssLoader({
     sourceMap: SOURCE_MAP ? '#source-map' : false,
     extract: !!cooking.config.extractCSS
-  })
+  }))
 }
